@@ -8,7 +8,7 @@ enchant.trump.ASSET_NAME_FONT = "images/font0.png";
 enchant.trump.SUIT_SPADE = 0;
 enchant.trump.SUIT_HEART = 1;
 enchant.trump.SUIT_DIAMOND = 2;
-enchant.trump.SUIT_CLUD = 3;
+enchant.trump.SUIT_CLUB = 3;
 
 enchant.trump.CARD_WIDTH = 28;
 enchant.trump.CARD_HEIGHT = 38;
