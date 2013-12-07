@@ -2,6 +2,9 @@
 
 http://daishihmr.github.io/trump.enchant.js/
 
+### ダウンロード
+https://github.com/daishihmr/trump.enchant.js/archive/1.1.zip
+
 ### 使い方
 ~~~js
 // スペードのエースを作成
