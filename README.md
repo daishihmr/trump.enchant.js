@@ -11,7 +11,7 @@ scene.addChild(card);
 // 裏返しにする
 card.opened = false;
 
-// タップしたらアニメーションしながら表向きにする
+// タップしたらアニメーションしながらひっくり返す
 card.ontouchstart = function() {
   this.animateReverse();
 };
