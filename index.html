@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+</head>
+<body style="margin:0">
+<script src="libs/enchant.min.js"></script>
+<script src="trump.enchant.js"></script>
+<script>
+enchant();
+
+window.onload = function() {
+    var core = new Core(500, 500);
+    core.preload(["images/font0.png", "images/icon0.png"]);
+    core.onload = function() {
+
+        var deck = TrumpCard.createDeck({
+            joker: 2,
+            shuffle: true
+        });
+
+        var temp = deck.slice();
+
+        while(temp.length) {
+            var card = temp.pop();
+            card.moveTo(250-card.width/2, 250-card.height/2);
+            core.rootScene.addChild(card);
+            card.opened = false;
+
+            var d = Math.random() * 200+50;
+            var a = Math.random() * Math.PI * 2;
+            var r = Math.random() * 720 - 360;
+            card.tl
+                .moveBy(Math.cos(a)*d, Math.sin(a)*d, 30, enchant.Easing.QUAD_EASEOUT)
+                .and()
+                .rotateTo(r, 30, enchant.Easing.QUAD_EASEOUT);
+
+            card.ontouchstart = function() {
+                this.animateReverse();
+            }
+        }
+
+        var timer = new Sprite(1, 1);
+        timer.tl.delay(30);
+        core.rootScene.addChild(timer);
+
+        deck.sort(TrumpCard.compare).reverse();
+        for (var i = 0; i < deck.length; i++) {
+            timer.tl.delay(5).exec(function() {
+                this.animateReverse();
+            }.bind(deck[i]));
+        }
+
+        timer.tl.loop();
+
+    };
+    core.start();
+};
+</script>
+</body>
+</html>
