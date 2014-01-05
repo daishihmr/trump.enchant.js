@@ -2,6 +2,9 @@
 
 http://daishihmr.github.io/trump.enchant.js/
 
+### ライセンス
+MITライセンス（copyright daishi_hmr）
+
 ### ダウンロード
 https://github.com/daishihmr/trump.enchant.js/archive/1.1.zip
 
